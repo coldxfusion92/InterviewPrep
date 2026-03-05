@@ -21,7 +21,7 @@ void interlaceTwoSinglyLinkedLists();
 
 // Problem 4: Reverse an integer represented as a linked list in place.
 // Can also be used as a helper f'n for problem 5 - pass in an integer-as-alist as param to trigger that usage.
-void reverseIntegerAsListInPlace(Node* list);
+void reverseIntegerAsListInPlace(Node* subProblemList);
 
 // Problem 5: Add two numbers represented by linked lists.
 // One helper f'n to construct a list from the sum.

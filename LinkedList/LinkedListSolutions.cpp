@@ -8,6 +8,7 @@
 // Namespaces.
 using namespace std;
 
+// ******************************************************* 1 *******************************************************
 Node* swapEveryTwoNodesHelper(Node* dList)
 {
     // 6 links to change:
@@ -91,6 +92,8 @@ void swapEveryTwoNodesInDoublyLinkedList()
     return;
 }
 
+
+// ******************************************************* 2 *******************************************************
 void swapKthNodes()
 {
     cout << "Problem: Swapping every Kth node in a singly linked list with n-Kth node." << endl;
@@ -142,6 +145,8 @@ void swapKthNodes()
     return;
 }
 
+
+// ******************************************************* 3 *******************************************************
 void interlaceTwoSinglyLinkedLists()
 {
     cout << "Problem: Interlacing 2 linked lists, starting with the first node of the first list." << endl;
@@ -206,21 +211,29 @@ void interlaceTwoSinglyLinkedLists()
     return;
 }
 
-void reverseIntegerAsListInPlace(Node* list)
-{
-    cout << "Problem: Reverse an int-represented-as-a-singly-linked-list in-place." << endl;
 
-    if (list != nullptr)
+// ******************************************************* 4 *******************************************************
+void reverseIntegerAsListInPlace(Node* subProblemList)
+{
+    Node* list;
+    bool isSubProblem = false;
+
+    if (subProblemList != nullptr)
     {
-		cout << "Plot twist - problem being used as a sub-problem; list already exists!" << endl;
+		// Plot twist - problem being used as a sub-problem; list already exists! No need for any prints.
+		cout << "A certain other problem is being used as a sub-problem for this one...brownie points if you can guess which." << endl;
+        list = subProblemList;
+		isSubProblem = true;
     }
     else
     {
+        cout << "Problem: Reverse an int-represented-as-a-singly-linked-list in-place." << endl;
+
         // Build vector of elements from user input.
         vector<int> elements = buildVectorOfElements();
 
         // Construct singly linked list from the built vector.
-        Node* list = createSinglyLinkedList(elements);
+        list = createSinglyLinkedList(elements);
         if (list == nullptr)
         {
             cout << "Uh oh....list creation failed." << endl;
@@ -228,9 +241,12 @@ void reverseIntegerAsListInPlace(Node* list)
         }
     }
 
-	// Print the input list.
-    cout << "Input list is:" << endl;
-	printList(list);
+	// Print the input list (no need if sub-problem use case though).
+    if (!isSubProblem)
+    {
+        cout << "Input list is:" << endl;
+        printList(list);
+    }
 
 	// Only manipulate a tmp pointer to the list, so that the head of the list can be used to print at the end.
     int sum = 0;
@@ -252,13 +268,18 @@ void reverseIntegerAsListInPlace(Node* list)
         tmp = tmp->next;
     }
 
-	// Print the reversed list.
-    cout << "Reverse list in place:" << endl;
-    printList(list);
+	// Print the reversed list (no need if sub-problem use case though).
+    if (!isSubProblem)
+    {
+        cout << "Reverse list in place:" << endl;
+        printList(list);
+    }
 
     return;
 }
 
+
+// ******************************************************* 5 *******************************************************
 Node* sumOfLists(int sum)
 {
     // Base case.
@@ -296,8 +317,13 @@ void addTwoIntegersAsLists()
     printList(sList1);
     printList(sList2);
 
-    // Method 1.
-    if (0)
+    // I did it two ways so....pick one.
+    int method;
+	cout << "I did this 2 ways - pick one: ";
+    cin >> method;
+
+    // Which way did I do it?
+    if (method == 1)
     {
         // Two tmp nodes to iterate over the two lists.
         Node* tmp1 = sList1;
@@ -305,8 +331,6 @@ void addTwoIntegersAsLists()
 
         int l1 = 0;
         int l2 = 0;
-        int l3 = 0;
-        int l4 = 0;
 
         // Find numerical value of list1.
         while (tmp1 != nullptr)
@@ -321,25 +345,23 @@ void addTwoIntegersAsLists()
             tmp2 = tmp2->next;
         }
 
-        // Add the actual values.
-        l3 = l1 + l2;
-        cout << "Sum of lists in number-form is: " << l3 << endl;
+        // Add the actual values (re-use l1).
+        l1 = l1 + l2;
+        cout << "Sum of lists in number-form is: " << l1 << endl;
 
-        // Reverse the numer.
-        while (l3)
+        // Reverse the numer (re-use l2...don't forget to re-init it!).
+        l2 = 0;
+        while (l1)
         {
-            l4 = (l4 * 10) + (l3 % 10);
-            l3 = l3 / 10;
+            l2 = (l2 * 10) + (l1 % 10);
+            l1 = l1 / 10;
         }
-        cout << "Sum in reverse is : " << l4 << endl;
 
         // Construct list for l3 by passing in the reverse.
 		cout << "Sum of lists as a list is: " << endl;
-        printList(sumOfLists(l4));
+        printList(sumOfLists(l2));
     }
-
-    // Method 2.
-    if (1)
+    else if (method == 2)
     {
         // Reverse both lists in place.
         reverseIntegerAsListInPlace(sList1);
@@ -392,6 +414,8 @@ void addTwoIntegersAsLists()
 
             // Now print the result list, after re-reversing.
             reverseIntegerAsListInPlace(sList1);
+            cout << "Sum of lists as a list is: " << endl;
+            printList(sList1);
         }
         else if (size2 > size1)
         {
@@ -417,7 +441,13 @@ void addTwoIntegersAsLists()
 
             // Now print the result list, after re-reversing.
             reverseIntegerAsListInPlace(sList2);
+            cout << "Sum of lists as a list is: " << endl;
+            printList(sList2);
         }
+    }
+    else
+    {
+        cout << "I only have 1 of 2 ways my friend - '1' or '2'. Your choice was neither." << endl;
     }
 
     return;

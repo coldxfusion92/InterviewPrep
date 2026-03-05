@@ -14,7 +14,7 @@ Node* createSinglyLinkedList(vector<int> elements)
         return nullptr;
     }
 
-    cout << "Creating singly linked list" << endl;
+    cout << "Creating singly linked list.....";
 
     // Head node and use tmp so that head can be returned.
     Node* head = new Node(elements[0]);
@@ -26,6 +26,8 @@ Node* createSinglyLinkedList(vector<int> elements)
         tmp->next = new Node(elements[i]);
         tmp = tmp->next;
     }
+
+	cout << "Done" << endl;
 
     return head;
 }
@@ -39,7 +41,7 @@ Node* createDoublyLinkedList(vector<int> elements)
         return nullptr;
     }
 
-    cout << "Creating new doubly linked list." << endl;
+    cout << "Creating new doubly linked list.....";
 
     // Head node and use tmp so that head can be returned.
     Node* head = new Node(elements[0]);
@@ -49,13 +51,15 @@ Node* createDoublyLinkedList(vector<int> elements)
     for (int i = 1; i < elements.size(); i++)
     {
         // Data.
-        tmp->next = new Node(i);
+        tmp->next = new Node(elements[i]);
 
         // Next and prev links.
         Node* prevNode = tmp;
         tmp = tmp->next;
         tmp->prev = prevNode;
     }
+
+    cout << "Done" << endl;
 
     return head;
 }
@@ -65,7 +69,7 @@ void printList(Node* list)
     // tmp Node to keep pass-by-reference list untouched
     Node* tmp = list;
 
-    cout << "List is: " << endl;
+    cout << "List is: ";
 
     // Iterate over list to print.
     while (tmp->next != nullptr)
@@ -75,7 +79,7 @@ void printList(Node* list)
     }
     cout << tmp->data;
 
-    cout << "End of list." << endl;
+    cout << " :End of list." << endl;
 }
 
 void printDoublyLinkedListInReverse(Node* list)
@@ -83,7 +87,7 @@ void printDoublyLinkedListInReverse(Node* list)
     // tmp Node to keep pass-by-reference list untouched
     Node* tmp = list;
 
-    cout << "Reverse list is: " << endl;
+    cout << "Reverse list is: ";
 
     // Iterate to the end of the list.
     while (tmp->next != nullptr)
@@ -97,5 +101,5 @@ void printDoublyLinkedListInReverse(Node* list)
     }
     cout << tmp->data;
 
-    cout << "End of list." << endl;
+    cout << " :End of list." << endl;
 }

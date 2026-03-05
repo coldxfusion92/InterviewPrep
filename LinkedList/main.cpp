@@ -8,17 +8,26 @@
 // Namespaces.
 using namespace std;
 
+#define MIN_PROBLEM_NUM 1
+#define MAX_PROBLEM_NUM 5
+
 int main()
 {
 	// Variable to specify which problem to run.
 	int c = 0;
 
-    while (c <= 0)
-    {
-        // Play problem roulette - specify any number to run a unique problem, if invalid number specified, program ends.
-        cout << "Enter a number to specify which problem to run (1-5); any other number quits the program: ";
-		cin >> c;
+    cout << "Play problem roulette - specify any number to run a unique problem, if invalid number specified, program ends." << endl;
+    cout << "Enter a number to specify which problem to run (1-5): ";
+    cin >> c;
 
+    if (c < MIN_PROBLEM_NUM || c > MAX_PROBLEM_NUM)
+    {
+        cout << "Invalid problem number specified. The game ends before it can even begin..." << endl;
+        return 0;
+	}
+
+    while (c >= 1 && c <= 5)
+    {
         switch (c)
         {
         case 1:
@@ -36,13 +45,13 @@ int main()
         case 5:
             addTwoIntegersAsLists();
             break;
-        default:
-            cout << "Invalid problem number specified. Default quits the loop; cya!" << endl;
-            break;
         }
+
+        cout << "Roll again: ";
+        cin >> c;
     }
 
-	cout << "Thanks for playing problem roulette! Program terminated." << endl;
+	cout << "Invalid number caught. Thanks for playing problem roulette! Program terminated." << endl;
 
     return 1;
 }
