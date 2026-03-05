@@ -449,3 +449,40 @@ void addTwoIntegersAsLists()
 
     return;
 }
+
+
+// ******************************************************* 6 *******************************************************
+void mergeKSortedLists()
+{
+	cout << "Problem: Merge K sorted linked lists into one sorted linked list." << endl;
+
+    int k = 0;
+    
+    cout << "Enter number of sorted lists: ";
+    cin >> k;
+
+    vector<vector<int>> kLists(k, vector<int>({}));
+    vector<Node*> listSet(k);
+
+	for (int i = 0; i < k; i++)
+    {
+        kLists[i].push_back({});
+
+		cout << "Building list " << i + 1 << ". Enter values; (-1) to finish" << endl;
+        int inputInt = 0;
+        while (inputInt != -1)
+        {
+            cout << "Enter value: ";
+            cin >> inputInt;
+            if (inputInt == -1)
+                break;
+            kLists[i].push_back(inputInt);
+		}
+
+        printList(createSinglyLinkedList(kLists[i]));
+    }
+
+    // To-do - try min heap method.
+
+	return;
+}

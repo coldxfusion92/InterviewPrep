@@ -27,3 +27,6 @@ void reverseIntegerAsListInPlace(Node* subProblemList);
 // One helper f'n to construct a list from the sum.
 void addTwoIntegersAsLists();					// Main
 Node* sumOfLists(int sum);						// Helper
+
+// Problem 6: Merge K sorted linked lists into one sorted linked list.
+void mergeKSortedLists();

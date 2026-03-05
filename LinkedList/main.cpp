@@ -6,7 +6,7 @@
 #include "LinkedListSolutions.h"
 
 #define MIN_PROBLEM_NUM 1
-#define MAX_PROBLEM_NUM 5
+#define MAX_PROBLEM_NUM 6
 
 int main()
 {
@@ -14,7 +14,7 @@ int main()
 	int c = 0;
 
     cout << "Play problem roulette - specify any number to run a unique problem, if invalid number specified, program ends." << endl;
-    cout << "Enter a number to specify which problem to run (1-5): ";
+    cout << "Enter a number to specify which problem to run (" << MIN_PROBLEM_NUM << " - " << MAX_PROBLEM_NUM << "): ";
     cin >> c;
 
     if (c < MIN_PROBLEM_NUM || c > MAX_PROBLEM_NUM)
@@ -23,7 +23,7 @@ int main()
         return 0;
 	}
 
-    while (c >= 1 && c <= 5)
+    while (c >= MIN_PROBLEM_NUM && c <= MAX_PROBLEM_NUM)
     {
         switch (c)
         {
@@ -42,6 +42,9 @@ int main()
         case 5:
             addTwoIntegersAsLists();
             break;
+        case 6:
+            mergeKSortedLists();
+			break;
         }
 
         cout << "Roll again: ";
