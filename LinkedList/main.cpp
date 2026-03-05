@@ -5,9 +5,6 @@
 // Headers to indicate what class of problems can be played.
 #include "LinkedListSolutions.h"
 
-// Namespaces.
-using namespace std;
-
 #define MIN_PROBLEM_NUM 1
 #define MAX_PROBLEM_NUM 5
 

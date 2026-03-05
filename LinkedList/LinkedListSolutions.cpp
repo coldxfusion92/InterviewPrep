@@ -5,9 +5,6 @@
 // Headers.
 #include "LinkedListSolutions.h"
 
-// Namespaces.
-using namespace std;
-
 // ******************************************************* 1 *******************************************************
 Node* swapEveryTwoNodesHelper(Node* dList)
 {
