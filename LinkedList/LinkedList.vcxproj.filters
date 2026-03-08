@@ -30,12 +30,24 @@
     <ClCompile Include="MiscHelpers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TreeHelpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeSolutions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListHelpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LinkedListSolutions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeSolutions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

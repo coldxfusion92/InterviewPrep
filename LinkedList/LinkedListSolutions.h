@@ -9,9 +9,9 @@
 #include "MiscHelpers.h"
 
 // Problem 1: Swap every 2 nodes in a doubly linked list.
-// One helper f'n to do the swap of 2 nodes, and one main f'n to build the list and call the helper.
+// One helper f'n to do the swap of 2 nodes (not exported), and one main f'n to build the list and call the helper.
 void swapEveryTwoNodesInDoublyLinkedList();		// Main
-Node* swapEveryTwoNodesHelper();				// Helper
+// Node* swapEveryTwoNodesHelper();				// Helper
 
 // Problem 2: Swap Kth nodes in a singly linked list with n-Kth node (essentially reversing in-place).
 void swapKthNodes();
@@ -24,9 +24,9 @@ void interlaceTwoSinglyLinkedLists();
 void reverseIntegerAsListInPlace(Node* subProblemList);
 
 // Problem 5: Add two numbers represented by linked lists.
-// One helper f'n to construct a list from the sum.
+// One helper f'n to construct a list from the sum (not exported).
 void addTwoIntegersAsLists();					// Main
-Node* sumOfLists(int sum);						// Helper
+// Node* sumOfLists(int sum);					// Helper
 
 // Problem 6: Merge K sorted linked lists into one sorted linked list.
 void mergeKSortedLists();

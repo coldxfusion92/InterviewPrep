@@ -4,9 +4,10 @@
 
 // Headers to indicate what class of problems can be played.
 #include "LinkedListSolutions.h"
+#include "TreeSolutions.h"
 
 #define MIN_PROBLEM_NUM 1
-#define MAX_PROBLEM_NUM 6
+#define MAX_PROBLEM_NUM 9
 
 int main()
 {
@@ -45,6 +46,15 @@ int main()
         case 6:
             mergeKSortedLists();
 			break;
+        case 7:
+            traversalType();
+            break;
+        case 8:
+            levelOrderTraversal();
+            break;
+        case 9:
+            isBinaryTreeBalanced();
+            break;
         }
 
         cout << "Roll again: ";

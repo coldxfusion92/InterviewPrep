@@ -19,9 +19,6 @@ struct Node
     Node* prev = nullptr;
     Node* next = nullptr;
 
-    // Optional flag to specify if being used as doubly linked list or not; default singly-linked.
-	bool isDoublyLinkedList = false;
-
     // Node constructor.
     Node(int iData)
     {

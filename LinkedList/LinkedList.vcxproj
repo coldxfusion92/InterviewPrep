@@ -133,10 +133,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MiscHelpers.cpp" />
     <ClCompile Include="MiscHelpers.h" />
+    <ClCompile Include="TreeHelpers.cpp" />
+    <ClCompile Include="TreeSolutions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedListHelpers.h" />
     <ClInclude Include="LinkedListSolutions.h" />
+    <ClInclude Include="TreeHelpers.h" />
+    <ClInclude Include="TreeSolutions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
