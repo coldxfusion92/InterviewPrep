@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="LinkedList/LinkedList.vcxproj" Id="a260ef3e-b611-4f01-811d-6b488f23b3bd" />
+  <Project Path="ProblemRoulette/ProblemRoulette.vcxproj" Id="a260ef3e-b611-4f01-811d-6b488f23b3bd" />
 </Solution>

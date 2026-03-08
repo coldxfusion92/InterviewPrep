@@ -116,7 +116,7 @@ bool isBalancedInefficient(bTree* node)
 	return true;
 }
 
-bool heightOrUnbalanced(bTree* node)
+int heightOrUnbalanced(bTree* node)
 {
 	// Base case: if node is null, it's balanced.
 	if (node == nullptr)
@@ -136,7 +136,7 @@ bool heightOrUnbalanced(bTree* node)
 	if (abs(leftHeight - rightHeight) > 1)
 		return -1;
 
-	return max(leftHeight, rightHeight) + 1;
+	return (max(leftHeight, rightHeight) + 1);
 }
 
 void isBinaryTreeBalanced()

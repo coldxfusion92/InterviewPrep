@@ -18,5 +18,5 @@ void levelOrderTraversal();
 // 2 helper f'ns (neither are exported) - one to calculate height and determine if unbalanced on the fly, 
 // and one inefficient one that calculates height at each node and checks for balance at each node separately.
 void isBinaryTreeBalanced();				// Main
-// bool heightOrUnbalanced(bTree* node);	// Helper 1
+// int heightOrUnbalanced(bTree* node);		// Helper 1
 // bool isBalancedInefficient(bTree* node);	// Helper 2
